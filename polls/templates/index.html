@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
-{% block title %} Inicio {% endblock %}
+{% block title %} Devpoll {% endblock %}
+
+{% block subtitle %} Bienvenido al sitio de encuestas libres {% endblock %}
 
 {% block section %}
-    <h2>Bienvenido al sitio de encuestas libres</h2>
-    <p>Puedes añadir una encuesta</p>
+    <div class="column large-3"></div>
+    <div class="column large-6 medium-12 small-12">
+        <p>Puedes añadir una encuesta o
+            <a href="#">Registrarte</a> para tener tus propias encuestas privadas</p>
     <a href="{% url 'polls:new' %}" class="button"> Nueva encuesta</a>
+    </div>
+    <div class="column large-3"></div>
+
 {% endblock %}

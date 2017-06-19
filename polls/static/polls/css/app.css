@@ -1,14 +1,22 @@
 .top-bar{
-    background-color: #1565C0;
+    background-color: #01579B;
+    -webkit-box-shadow: 2px 3px 35px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 35px -10px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 35px -10px rgba(0,0,0,0.75);
+    z-index: 1;
 }
 .top-bar ul {
-    background-color: #1565C0;
-    font-color: #FFFFFF;
+    background-color: #01579B;
+
 }
 .top-bar a{
-    color: #FFFFFF;
+    color: #ffffff;
     font-stretch: condensed;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 .top-bar a:hover{
-    background: #0D47A1;
+    background: #0277BD;
+}
+body {
+    background-color: #EEEEEE;
 }
