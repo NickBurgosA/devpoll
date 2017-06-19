@@ -1,8 +1,15 @@
-<h1>{{ question.question_text }}</h1>
-<h2>Resultados</h2>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/foundation.css' %}"/>
+
+<h3>{{ question.question_text }}</h3>
+<h4>Resultados</h4>
 <ul>
     {% for choice in question.choice_set.all %}
         <li>{{ choice }} - {{ choice.votes }} vote{{ choice.votes|pluralize}}</li>
     {% endfor %}
 </ul>
 <a href="{% url 'polls:detail' question.id %}"> Vota denuevo</a>
+
+<script src="{% static 'polls/js/vendor/jquery.js' %}"></script>
+<script src="{% static 'polls/js/vendor/what-input.js' %}"></script>
+<script src="{% static 'polls/js/vendor/foundation.js' %}"></script>

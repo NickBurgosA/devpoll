@@ -1,9 +1,17 @@
-{%  if latest_question_list %}
-    <ul>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/foundation.css' %}"/>
+
+    <h2>Lista de encuestas disponibles</h2>
+    {%  if latest_question_list %}
+    <ul class="vertical menu">
         {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }} </a></li>
         {% endfor %}
     </ul>
-{% else %}
-    <p>No hay encuestas disponibles.</p>
-{% endif %}
+    {% else %}
+        <p>No hay encuestas disponibles.</p>
+    {% endif %}
+
+<script src="{% static 'polls/js/vendor/jquery.js' %}"></script>
+<script src="{% static 'polls/js/vendor/what-input.js' %}"></script>
+<script src="{% static 'polls/js/vendor/foundation.js' %}"></script>

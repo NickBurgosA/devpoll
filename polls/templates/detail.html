@@ -1,11 +1,26 @@
-<h1> {{ question.question_text }}</h1>
+{% load static %}
 
-{% if error_message %} <p><strong>{{ error_message }}</strong></p>{% endif %}
-<form action="{% url 'polls:vote' question.id %}" method="POST">
-    {%  csrf_token %}
-    {% for choice in question.choice_set.all %}
-        <input type="radio" name="choice" id="choice {{ forloop.counter }}" value="{{ choice.id }}" />
-        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label> <br/>
-    {% endfor %}
-<input type="submit" value="Vota" />
-</form>
+<link rel="stylesheet" type="text/css" href="{% static 'polls/css/foundation.css' %}"/>
+
+<div class="card">
+    <div class="card-divider">
+        <h3> {{ question.question_text }}</h3>
+    </div>
+    <div class="card-section">
+    {% if error_message %} <p><strong>{{ error_message }}</strong></p>{% endif %}
+    <form action="{% url 'polls:vote' question.id %}" method="POST">
+        {%  csrf_token %}
+        {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice {{ forloop.counter }}" value="{{ choice.id }}" />
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label> <br/>
+        {% endfor %}
+        <input type="submit" value="Vota" class="button" />
+    </form>
+    </div>
+</div>
+
+
+
+<script src="{% static 'polls/js/vendor/jquery.js' %}"></script>
+<script src="{% static 'polls/js/vendor/what-input.js' %}"></script>
+<script src="{% static 'polls/js/vendor/foundation.js' %}"></script>
