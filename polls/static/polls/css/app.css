@@ -1,0 +1,14 @@
+.top-bar{
+    background-color: #1565C0;
+}
+.top-bar ul {
+    background-color: #1565C0;
+    font-color: #FFFFFF;
+}
+.top-bar a{
+    color: #FFFFFF;
+    font-stretch: condensed;
+}
+.top-bar a:hover{
+    background: #0D47A1;
+}

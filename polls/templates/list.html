@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{%  block section %}
+    <h2>Lista de encuestas disponibles</h2>
+    {%  if latest_question_list %}
+    <ul class="vertical menu">
+        {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }} </a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No hay encuestas disponibles.</p>
+    {% endif %}
+
+{%  endblock %}

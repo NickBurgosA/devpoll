@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'polls/css/foundation.css' %}"/>
+        <link rel="stylesheet" href="{% static 'polls/css/app.css' %}"/>
+        <title>{% block title %} Devpoll{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <div class="top-bar">
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li><a href="{% url 'polls:index' %}">Inicio</a></li>
+                        <li><a href="{% url 'polls:list' %}">Encuestas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+                {% block section %}
+
+                {% endblock %}
+        </div>
+    </body>
+    <script src="{% static 'polls/js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'polls/js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'polls/js/vendor/foundation.js' %}"></script>
+</html>
+
+

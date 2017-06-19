@@ -7,8 +7,14 @@ from django.utils import timezone
 
 # Create your views here.
 
-class IndexView(generic.ListView):
-    template_name = 'index.html'
+def index(request):
+    return render(request, 'index.html')
+
+class NewPollView(generic.FormView):
+    template_name = 'new.html'
+
+class ListPollsView(generic.ListView):
+    template_name = 'list.html'
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
